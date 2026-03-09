@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+}
+
+
+/* Navigation Bar */
+
+.nav_bar {
+    background-color: rgb(255, 73, 73);
+}
+
+.logo {
+    width: 13%;
+}
