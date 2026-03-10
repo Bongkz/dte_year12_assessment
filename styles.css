@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    padding: 0;
 }
 
 
@@ -7,6 +8,11 @@
 
 .nav_bar {
     background-color: rgb(255, 73, 73);
+}
+
+.nav_links{
+    display: flex;
+    gap: 30px;
 }
 
 .logo {
