@@ -18,6 +18,7 @@
 .nav_links{
     display: flex;
     gap: 30px;
+    text-decoration: none;
 }
 
 .logo {
@@ -28,5 +29,5 @@
 .w-100{
     width: 100%;
     object-fit: cover;
-    height: 700px;
+    height: 600px;
 }
