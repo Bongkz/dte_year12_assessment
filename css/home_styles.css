@@ -23,3 +23,10 @@
 .logo {
     width: 13%;
 }
+
+/* Carousel */
+.w-100{
+    width: 100%;
+    object-fit: cover;
+    height: 700px;
+}
