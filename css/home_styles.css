@@ -11,18 +11,66 @@
     display: flex;
     width: 100%;
     box-sizing: border-box;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    flex: 1;
+}
+
+.nav_logo{
+    flex: 1;
+    display: inline-block;
     justify-content: flex-start;
     align-items: center;
+    margin-right: -300px;
 }
 
 .nav_links{
+    flex: 2;
     display: flex;
-    gap: 30px;
+    gap: 170px;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.nav_links a {
     text-decoration: none;
+    color:white;
+    text-transform: uppercase;
+    font-size:20px;
+    font-weight:bold;
+    margin-left: 0px;
+}
+
+.nav_order_button {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 100px;
+    margin-left: -100px;
+}
+
+.order_button {
+    border-radius: 4px;
+    background-color:black;
+    color: white;
+    font-size: 25px;
+    padding: 8px;
+    padding-right: 20px;
+    padding-left: 20px;
+    transition-duration: 0.4s;
+    border: none;
+}
+
+.order_button:hover {
+    background-color: rgb(219, 19, 19);
+    color: white;
 }
 
 .logo {
-    width: 13%;
+    width: 33%;
 }
 
 /* Carousel */
