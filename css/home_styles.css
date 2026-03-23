@@ -50,6 +50,7 @@
     justify-content: flex-end;
     padding-right: 100px;
     margin-left: -100px;
+    margin-bottom: 15px;
 }
 
 .order_button {
@@ -65,7 +66,7 @@
 }
 
 .order_button:hover {
-    background-color: rgb(219, 19, 19);
+    background-color: rgb(201, 0, 0);
     color: white;
 }
 
@@ -78,4 +79,26 @@
     width: 100%;
     object-fit: cover;
     height: 600px;
+}
+
+/* Text and Images */
+.motto{
+    text-align: center;
+    padding: 50px;
+    font-size: 60px;
+    font-style: italic;
+}
+.main_info{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.paragraph{
+    flex:1;
+    padding-left: 20px;
+}
+
+.burger_man{
+    margin-right: 2%;
 }
