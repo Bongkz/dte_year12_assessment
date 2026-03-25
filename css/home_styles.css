@@ -3,18 +3,25 @@
     padding: 0;
 }
 
+body{
+    padding-top: 100px;
+}
 
 /* Navigation Bar */
 
 .nav_bar {
-    background-color: rgb(255, 54, 54);
+    background-color: rgb(255, 255, 255);
     display: flex;
     width: 100%;
     box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid black;
     flex: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100px;
 }
 
 .nav_logo{
@@ -25,10 +32,11 @@
     margin-right: -300px;
 }
 
+
 .nav_links{
     flex: 2;
     display: flex;
-    gap: 170px;
+    gap: 60px;
     list-style: none;
     margin-left: auto;
     margin-right: auto;
@@ -37,11 +45,17 @@
 
 .nav_links a {
     text-decoration: none;
-    color:white;
+    color:black;
     text-transform: uppercase;
-    font-size:20px;
+    font-size:18px;
     font-weight:bold;
     margin-left: 0px;
+}
+
+.nav_links a:hover {
+    text-decoration: underline;
+    text-decoration-color: rgb(230, 0, 0);
+    text-decoration-thickness: 3px;
 }
 
 .nav_order_button {
@@ -54,24 +68,25 @@
 }
 
 .order_button {
-    border-radius: 4px;
+    border-radius: 30px;
     background-color:black;
     color: white;
     font-size: 25px;
     padding: 8px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 25px;
+    padding-left: 25px;
     transition-duration: 0.4s;
     border: none;
 }
 
+
 .order_button:hover {
-    background-color: rgb(201, 0, 0);
+    background-color: rgb(230, 1, 1);
     color: white;
 }
 
 .logo {
-    width: 33%;
+    width: 19%;
 }
 
 /* Carousel */
@@ -79,6 +94,10 @@
     width: 100%;
     object-fit: cover;
     height: 600px;
+}
+
+.carousel{
+    width: 100%;
 }
 
 /* Text and Images */
@@ -101,4 +120,14 @@
 
 .burger_man{
     margin-right: 2%;
+}
+
+/* Footer */
+.footer{
+    background-color: black;
+    margin-top: 5%;
+    padding: 20px;
+    color: white;
+
+
 }
