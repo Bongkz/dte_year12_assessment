@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding-top: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Text and Images */
+.heading{
+    font-size: 80px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    padding: 30px;
+}
+
+.motto{
+    text-align: center;
+    padding: 50px;
+    font-size: 60px;
+    font-style: italic;
+    color: black;
+}
+.main_info{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.paragraph{
+    flex:1;
+}
+
+.burger_man{
+
+}

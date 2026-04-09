@@ -2,6 +2,8 @@
 .main-footer {
     background-color: black;
     padding: 40px 0;
+    margin-right: -40px;
+    margin-left: -40px;
     display: flex;
     flex-direction: column; /* Stacks the socials, links, and text */
     align-items: center;    /* Centers everything horizontally */
