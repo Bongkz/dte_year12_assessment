@@ -7,88 +7,6 @@ body{
     padding-top: 100px;
 }
 
-/* Navigation Bar */
-
-.nav_bar {
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    height: 100px;
-}
-
-.nav_logo{
-    flex: 1;
-    display: inline-block;
-    justify-content: flex-start;
-    align-items: center;
-    margin-right: -300px;
-}
-
-
-.nav_links{
-    flex: 2;
-    display: flex;
-    gap: 60px;
-    list-style: none;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-}
-
-.nav_links a {
-    text-decoration: none;
-    color:black;
-    text-transform: uppercase;
-    font-size:18px;
-    font-weight:bold;
-    margin-left: 0px;
-}
-
-.nav_links a:hover {
-    text-decoration: underline;
-    text-decoration-color: rgb(230, 0, 0);
-    text-decoration-thickness: 3px;
-}
-
-.nav_order_button {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 100px;
-    margin-left: -100px;
-    margin-bottom: 15px;
-}
-
-.order_button {
-    border-radius: 30px;
-    background-color:black;
-    color: white;
-    font-size: 25px;
-    padding: 8px;
-    padding-right: 25px;
-    padding-left: 25px;
-    transition-duration: 0.4s;
-    border: none;
-}
-
-
-.order_button:hover {
-    background-color: rgb(230, 1, 1);
-    color: white;
-}
-
-.logo {
-    width: 20%;
-}
-
 /* Carousel */
 .w-100{
     width: 100%;
@@ -115,73 +33,10 @@ body{
 
 .paragraph{
     flex:1;
-    padding-left: 20px;
+    padding-left: 50px;
 }
 
 .burger_man{
-    margin-right: 2%;
+    margin-right: 50px;
 }
 
-/* Footer */
-.main-footer {
-    background-color: black;
-    padding: 40px 0;
-    display: flex;
-    flex-direction: column; /* Stacks the socials, links, and text */
-    align-items: center;    /* Centers everything horizontally */
-    gap: 20px;              /* Space between the three rows */
-    margin-top: 50px;
-
-}
-
-/* Social Icons Row */
-.footer-socials {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.footer-socials a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-    border: 1px solid grey; /* white circle */
-    border-radius: 50%;     /* Makes it a perfect circle */
-    color: grey;            /* Icon color */
-    text-decoration: none;
-    font-size: 20px;
-    transition: 0.3s;
-}
-
-.footer-socials a:hover {
-    color: white;         /* white on hover */
-    border-color: white;
-}
-
-/* Links Row */
-.footer-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links a {
-    text-decoration: none;
-    color: #999;
-    font-size: 14px;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
-
-/* Copyright Row */
-.footer-copyright {
-    color: #999;
-    font-size: 12px;
-    margin: 0;
-}
