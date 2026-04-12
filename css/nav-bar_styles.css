@@ -67,7 +67,7 @@
 
 .order_button {
     border-radius: 30px;
-    background-color: black;
+    background-color: red;
     color: white;
     font-size: 18px;
     padding: 10px 25px;
@@ -77,5 +77,5 @@
 }
 
 .order_button:hover {
-    background-color: rgb(230, 1, 1);
+    background-color: black;
 }
