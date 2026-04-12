@@ -13,7 +13,6 @@
     box-sizing: border-box;
 }
 
-/* 2. The Container - This is the "boss" of the layout */
 .nav-container {
     display: flex;
     width: 100%;
@@ -21,47 +20,49 @@
     padding: 0 50px; /* Equal padding on both sides */
 }
 
-/* 3. The Three Columns (Flex: 1 makes them all equal size) */
 .nav_logo, .nav_links, .nav_order_button {
-    flex: 1; 
+    flex: 1; /* flexbox */
     display: flex;
     align-items: center;
 }
 
 /* Logo Section */
 .nav_logo {
+    /* puts logo at the left */
     justify-content: flex-start;
 }
 
 .logo {
-    height: 100px; /* Set height instead of width for circles */
+    height: 100px;
     width: auto;
 }
 
-/* Links Section - Dead Center */
+/* Links Section */
 .nav_links {
-    justify-content: center;
-    gap: 40px;
+    justify-content: center; /* puts links in the center */
+    gap: 40px; /* gap in between links */
     list-style: none;   
     margin: 0;
     padding: 0;
 }
 
 .nav_links a {
-    text-decoration: none;
+    text-decoration: none; /* removes default link decoration */
     color: black;
     font-size: 20px;
     font-weight: bold;
 }
 
 .nav_links a:hover {
+    /* Adds red underline when hovered over each link */
     text-decoration: underline;
     text-decoration-color: red;
     text-decoration-thickness: 3px;
 }
 
-/* Button Section - Far Right */
+/* Button Section */
 .nav_order_button {
+    /* Puts button on the very end */
     justify-content: flex-end;
 }
 
@@ -73,9 +74,9 @@
     padding: 10px 25px;
     border: none;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.4s; /* transition when hovered over */
 }
 
 .order_button:hover {
-    background-color: black;
+    background-color: black; /* color when hovered over */
 }

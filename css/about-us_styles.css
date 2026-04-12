@@ -11,28 +11,29 @@ body{
 
 /* Text and Images */
 .heading{
+    /*styles for "Our Story" heading */
     font-size: 80px;
-    text-align: center;
+    text-align: center; /* Puts text in the middle */
     font-weight: bold;
     color: black;
     padding: 30px;
     padding-bottom: 40px;
-    background-color: rgb(255, 0, 0, 0.8);
+    background-color: rgb(255, 0, 0, 0.8); /* red background */
     margin-left: -40px;
-    margin-right: -40px;   
+    margin-right: -40px; /* removes padding from left and right */  
 }
 
 .motto{
-    text-align: center;
+    text-align: center; /* Puts text in the center */
     padding: 50px;
     font-size: 60px;
-    font-style: italic;
+    font-style: italic; /* Italic font */
     color: black;
 }
 .main_info{
-    display: flex;
-    align-items: center;
-    gap: 30px;
+    display: flex; /* flexbox */
+    align-items: center; /* Puts them in the center */
+    gap: 30px; /* Gap between them */
 }
 
 .paragraph{

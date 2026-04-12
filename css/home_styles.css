@@ -1,10 +1,12 @@
+/* Main rules used for each page */
 * {
     margin: 0;
     padding: 0;
 }
 
 body{
-    padding-top: 100px;
+    padding-top: 100px; /* adds padding at the top so content isnt covered by nav bar */
+    /* adds gap from left and right */
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -25,7 +27,7 @@ body{
 .card-container {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 20px; /* Gap in between */
     margin-top: 40px;
 }
 
@@ -34,35 +36,36 @@ body{
     background: white;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /*adds a slight shadow for each card */
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease; /* transition when it is hovered over */
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* shifts up a bit when hovered over */
 }
 
 .card img {
     width: 100%;
     height: 250px;
-    object-fit: cover;
+    object-fit: cover; /* Makes image fit better */
 }
 
 .card-content {
     padding: 20px;
-    display: flex;
+    /*flexbox*/
+    display: flex; 
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
 }
 
 .button-text {
-    text-decoration: none;
+    text-decoration: none; /* removes blue link color/design */
     color: white;
     width: 100%;
-    display: block;
+    display: block; /* Makes it so that button is clickable and not just the text */
 }
 
 .card h3 {
@@ -77,9 +80,9 @@ body{
     color: white;
     font-size: 16px;
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: background 0.2s ease; /* transition when color changes */
 }
 
 .card button:hover {
-    background: red;
+    background: red; /* new color when hovered over */
 }
