@@ -43,7 +43,7 @@ body{
 /* IMAGE */
 .card img {
     width: 100%;
-    height: 180px;
+    height: 280px;
     object-fit: cover;
     background: #ddd;
 }
