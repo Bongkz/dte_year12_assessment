@@ -1,0 +1,394 @@
+/* ========================================
+    Stylesheet for Beefy Buns Website
+    Author: Cedric Dimasuhid
+    File:   styles.css
+    Date:   March 2026
+    ======================================== */
+
+
+/****** General styling for all pages ******/
+
+/* Main rules used for each page */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Adds gap from left and right and adds padding at the top so the nav bar doesn't cover*/
+body{
+    padding-top: 100px; 
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/****** Styling for nav bar ******/
+
+.nav_bar {
+    background-color: #ffffff;
+    display: flex;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Adds a shadow below */
+    box-sizing: border-box;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0 50px; /* Equal padding on both sides */
+}
+
+.nav_logo, .nav_links, .nav_order_button {
+    flex: 1; /* flexbox */
+    display: flex;
+    align-items: center;
+}
+
+/* Logo Section */
+/* puts logo at the left */
+.nav_logo {
+    justify-content: flex-start;
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+}
+
+/* Links Section */
+.nav_links {
+    justify-content: center; /* puts links in the center */
+    gap: 40px; /* gap in between links */
+    list-style: none;   
+    margin: 0;
+    padding: 0;
+}
+
+.nav_links a {
+    text-decoration: none; /* removes default link decoration */
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav_links a:hover {
+    /* Adds red underline when hovered over each link */
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 3px;
+}
+
+/* Button Section */
+.nav_order_button {
+    /* Puts button on the very end */
+    justify-content: flex-end;
+}
+
+.order_button {
+    border-radius: 30px;
+    background-color: red;
+    color: white;
+    font-size: 18px;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    transition: 0.4s; /* transition when hovered over */
+}
+
+.order_button:hover {
+    background-color: black; /* color when hovered over */
+}
+
+
+/****** Styling for footer ******/
+
+.main-footer {
+    background-color: black;
+    padding: 40px 0;
+    /* removes padding from left and right */
+    margin-right: -40px;
+    margin-left: -40px;
+    display: flex;
+    flex-direction: column; /* Stacks the socials, links, and text */
+    align-items: center; /* Centers everything horizontally */
+    gap: 20px; /* Space between the three rows */
+    margin-top: 50px;
+
+}
+
+/* Social Icons Row */
+.footer-socials {
+    display: flex; /* flexbox */
+    justify-content: center;
+    gap: 10px; /* gap in between icons */
+}
+
+.footer-socials a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border: 1px solid grey; /* white circle */
+    border-radius: 50%; /* Makes it a perfect circle */
+    color: grey; /* Icon color */
+    text-decoration: none; /* removes default link decoration */
+    font-size: 20px;
+    transition: 0.3s; /* Transition when hovered over */
+}
+
+.footer-socials a:hover {
+    color: white;         /* white on hover */
+    border-color: white;
+}
+
+/* Links Row */
+.footer-links {
+    display: flex; /* flexbox */
+    list-style: none;
+    gap: 20px; /* gap between each link */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a {
+    text-decoration: none; /* removes default link decoration */
+    color: #999;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline; /* small underline when hovered over */
+}
+
+/* Copyright Row */
+.footer-copyright {
+    color: #999;
+    font-size: 12px;
+    margin: 0;
+}
+
+/****** Styling for home page (index.html) ******/
+
+
+/* Carousel styles */
+.w-100{
+    width: 100%;
+    object-fit: cover;
+    height: 600px;
+}
+
+.carousel{
+    width: 100%;
+}
+
+/* Card Styles */
+.card-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Gap in between */
+    margin-top: 40px;
+}
+
+.card {
+    flex: 1;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /*adds a slight shadow for each card */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease; /* transition when it is hovered over */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* shifts up a bit when hovered over */
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Makes image fit better */
+}
+
+.card-content {
+    padding: 20px;
+    /*flexbox*/
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.button-text {
+    text-decoration: none; /* removes blue link color/design */
+    color: white;
+    width: 100%;
+    display: block; /* Makes it so that button is clickable and not just the text */
+}
+
+.card h3 {
+    margin: 0 0 15px;
+}
+
+.card button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ff4d4d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s ease; /* transition when color changes */
+}
+
+.card button:hover {
+    background: red; /* new color when hovered over */
+}
+
+/****** Styling for menu page ******/
+
+/* SECTION */
+.menu-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.menu-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* GRID*/
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+/* IMAGE */
+.card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    background: #ddd;
+}
+
+/* CONTENT */
+.card-content {
+    padding: 15px;
+}
+
+.card-content h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.card-content p {
+    font-size: 14px;
+    color: #666;
+    margin: 8px 0 12px;
+}
+
+/* BUTTON */
+.card button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #e4002b;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+.card button:hover {
+    background: #c10024;
+}
+
+/****** Styling for checkout page ******/
+
+.checkout-container {
+    padding-top: 150px; /* Space for fixed nav */
+    display: flex;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.checkout-box {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/****** Styling for About Us page ******/
+
+/* Text and Images */
+.heading{
+    /*styles for "Our Story" heading */
+    font-size: 80px;
+    text-align: center; /* Puts text in the middle */
+    font-weight: bold;
+    color: black;
+    padding: 30px;
+    padding-bottom: 40px;
+    background-color: rgb(255, 0, 0, 0.8); /* red background */
+    margin-left: -40px;
+    margin-right: -40px; /* removes padding from left and right */  
+}
+
+.motto{
+    text-align: center; /* Puts text in the center */
+    padding: 50px;
+    font-size: 60px;
+    font-style: italic; /* Italic font */
+    color: black;
+}
+.main_info{
+    display: flex; /* flexbox */
+    align-items: center; /* Puts them in the center */
+    gap: 30px; /* Gap between them */
+}
+
+.paragraph{
+    flex:1;
+}
