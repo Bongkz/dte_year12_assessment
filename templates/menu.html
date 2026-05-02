@@ -92,9 +92,11 @@
                     <div class="card-content">
                         <h3>{{ item[1] }} - ${{ item[3] }}</h3>
                         <p>{{ item[2] }}</p>
-                        <a href="/checkout">
-                            <button type="button">Add to cart</button>
-                        </a>
+                        <form action="/add_to_cart" method="post">
+                            <input type="hidden" name="menuid" value="{{ item[0] }}">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit">Add to cart</button>
+                        </form>
                     </div>
                 </div>
                 {% endif %}

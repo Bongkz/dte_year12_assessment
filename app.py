@@ -1,7 +1,9 @@
-from flask import Flask, render_template
-import sqlite3
+from flask import Flask, render_template, request, redirect, url_for
+from database import get_db, close_db
+from order import add_order
 
 app = Flask(__name__)
+app.teardown_appcontext(close_db)
 
 # HOME PAGE
 @app.route("/")
@@ -11,15 +13,24 @@ def home():
 # MENU PAGE
 @app.route("/menu")
 def menu():
-    conn = sqlite3.connect("database.db")
+    conn = get_db()
     cursor = conn.cursor()
 
     cursor.execute("SELECT * FROM Menu")
     items = cursor.fetchall()
 
-    conn.close()
-
     return render_template("menu.html", items=items)
+
+@app.route("/add_to_cart", methods=["POST"])
+def add_to_cart():
+    menuid = request.form.get("menuid", type=int)
+    quantity = request.form.get("quantity", type=int, default=1)
+
+    if menuid is None or quantity < 1:
+        return redirect(url_for("menu"))
+
+    add_order(menuid, quantity)
+    return redirect(url_for("checkout"))
 
 # ABOUT US PAGE
 @app.route("/aboutus")
