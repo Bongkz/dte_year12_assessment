@@ -1,18 +1,35 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template
+import sqlite3
 
 app = Flask(__name__)
 
-@app.route('/')
+# HOME PAGE
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+# MENU PAGE
+@app.route("/menu")
 def menu():
-    return render_template('menu.html')
+    conn = sqlite3.connect("database.db")
+    cursor = conn.cursor()
 
-@app.route('/checkout')
+    cursor.execute("SELECT * FROM Menu")
+    items = cursor.fetchall()
+
+    conn.close()
+
+    return render_template("menu.html", items=items)
+
+# ABOUT US PAGE
+@app.route("/aboutus")
+def aboutus():
+    return render_template("aboutus.html")
+
+# CHECKOUT PAGE
+@app.route("/checkout")
 def checkout():
-    # This grabs the "item" and "price" from the URL
-    item_name = request.args.get('item', 'Nothing')
-    item_price = request.args.get('price', '0.00')
-    
-    return render_template('checkout.html', item=item_name, price=item_price)
+    return render_template("checkout.html")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(debug=True)
