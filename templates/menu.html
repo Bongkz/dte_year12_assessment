@@ -44,6 +44,10 @@
         </div>
         </nav>
     </header>
+
+    <section class="page-header" style="text-align:center; padding: 40px 0;">
+        <h1 style="margin:0; font-size: 3rem;">Menu</h1>
+    </section>
     
     {% set image_map = {
         'Classic Beef': 'classicbeef.jpg',
@@ -57,26 +61,47 @@
         'Onion Rings': 'onionrings.png',
         'Soft Drink': 'coke.jpg',
         'Milkshake': 'milkshake.jpg',
-        'Iced Tea': 'sprite.png'
+        'Iced Tea': 'icedtea.jpg'
     } %}
-    
+
+    {% set category_map = {
+        'Classic Beef': 'Beef',
+        'Double Beef': 'Beef',
+        'Beefy BBQ Special': 'Beef',
+        'Classic Chicken': 'Chicken',
+        'Crispy Chicken Zinger': 'Chicken',
+        'Saucy Bacon & Chicken': 'Chicken',
+        'Fries': 'Sides',
+        '10 Pcs Chicken Nuggets': 'Sides',
+        'Onion Rings': 'Sides',
+        'Soft Drink': 'Drinks',
+        'Milkshake': 'Drinks',
+        'Iced Tea': 'Drinks'
+    } %}
+
+    {% set categories = ['Beef', 'Chicken', 'Sides', 'Drinks'] %}
+
+    {% for category in categories %}
     <section class="menu-section">
-        <h2>Menu</h2>
+        <h2>{{ category }}</h2>
         <div class="grid">
             {% for item in items %}
-            <div class="menu_card">
-                <img src="/static/assets/{{ image_map[item[1]] }}" />
-                <div class="card-content">
-                    <h3>{{ item[1] }} - ${{ item[3] }}</h3>
-                    <p>{{ item[2] }}</p>
-                    <a href="/checkout">
-                        <button type="button">Add to cart</button>
-                    </a>
+                {% if category_map[item[1]] == category %}
+                <div class="menu_card">
+                    <img src="/static/assets/{{ image_map[item[1]] }}" />
+                    <div class="card-content">
+                        <h3>{{ item[1] }} - ${{ item[3] }}</h3>
+                        <p>{{ item[2] }}</p>
+                        <a href="/checkout">
+                            <button type="button">Add to cart</button>
+                        </a>
+                    </div>
                 </div>
-            </div>
+                {% endif %}
             {% endfor %}
         </div>
     </section>
+    {% endfor %}
 
     <!-- Footer -->
     <footer class="main-footer">

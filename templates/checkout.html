@@ -1,32 +1,6 @@
-<main class="checkout-container" style="max-width: 800px; margin: 50px auto; padding: 20px;">
-    <h2>Your Cart</h2>
-
-    <div id="cart-item" style="display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; padding: 10px 0;">
-        <div>
-            <span id="item-name" style="font-weight: bold;">{{ item }}</span>
-            <span style="color: #666; margin-left: 10px;">$ <span id="item-price">{{ price }}</span></span>
-        </div>
-        <button onclick="removeItem()" style="background: none; border: none; color: red; cursor: pointer;">Remove</button>
-    </div>
-
-    <div style="margin-top: 20px; text-align: right;">
-        <h3>Subtotal: $<span id="subtotal">{{ price }}</span></h3>
-    </div>
-
-    <form action="/place_order" method="POST" style="margin-top: 30px;">
-        <input type="hidden" name="total" value="{{ price }}">
-        <input type="text" name="customer_name" placeholder="Your Name" required style="display: block; margin-bottom: 10px; width: 100%; padding: 8px;">
-        <input type="text" name="address" placeholder="Address" required style="display: block; margin-bottom: 20px; width: 100%; padding: 8px;">
-        
-        <button type="submit" class="order_button" style="width: 100%; padding: 15px; background-color: red; color: white; border: none; font-weight: bold;">
-            CHECKOUT
-        </button>
-    </form>
-</main>
-
-<script>
-    function removeItem() {
-        document.getElementById('cart-item').innerHTML = "<p>Your cart is empty.</p>";
-        document.getElementById('subtotal').innerText = "0.00";
-    }
-</script>
+<!-- ========================================
+    Home Page for Beefy Buns
+    Author: Cedric Dimasuhid
+    File:   index.html
+    Date:   March 2026
+    ======================================== -->

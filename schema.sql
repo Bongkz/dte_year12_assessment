@@ -16,7 +16,7 @@ CREATE TABLE orders (
 
 
 --MENU ITEMS
-INSERT INTO Menu (name, description, price)
+INSERT INTO menu (name, description, price)
 VALUES 
 --BEEF BURGERS
 ('Classic Beef', 'Juicy beef patty with lettuce & sauce', 5.00),
@@ -39,12 +39,12 @@ VALUES
 -- Joins tables together to make it easier to read the order details with the menu item names and prices
 SELECT 
     orders.orderid,
-    Menu.name,
-    Menu.price,
+    menu.name,
+    menu.price,
     orders.quantity,
     orders.total,
     orders.order_time
 FROM orders
-JOIN Menu ON orders.menuid = Menu.menuid;
+JOIN menu ON orders.menuid = menu.menuid;
 
-ALTER TABLE Menu ADD COLUMN category TEXT;
+ALTER TABLE menu ADD COLUMN category TEXT;
