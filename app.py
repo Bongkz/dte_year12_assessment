@@ -44,7 +44,30 @@ def aboutus():
 # CHECKOUT PAGE
 @app.route("/checkout")
 def checkout():
-    return render_template("checkout.html")
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("""
+        SELECT orders.orderid, menu.name, menu.price, orders.quantity, orders.total
+        FROM orders
+        JOIN menu ON orders.menuid = menu.menuid
+        ORDER BY orders.order_time DESC
+    """)
+    cart_items = cursor.fetchall()
+
+    total = sum(item[4] for item in cart_items)  # item[4] is total
+
+    return render_template("checkout.html", cart_items=cart_items, total=total)
+
+@app.route("/remove_item/<int:orderid>", methods=["POST"])
+def remove_item(orderid):
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("DELETE FROM orders WHERE orderid = ?", (orderid,))
+    conn.commit()
+
+    return redirect(url_for("checkout"))
 
 if __name__ == "__main__":
     app.run(debug=True)
