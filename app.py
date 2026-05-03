@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 from database import get_db, close_db
 from order import add_order
 
@@ -27,9 +27,13 @@ def add_to_cart():
     quantity = request.form.get("quantity", type=int, default=1)
 
     if menuid is None or quantity < 1:
+        if request.accept_mimetypes.accept_json:
+            return jsonify({"success": False, "message": "Invalid item."}), 400
         return redirect(url_for("menu"))
 
     add_order(menuid, quantity)
+    if request.accept_mimetypes.accept_json:
+        return jsonify({"success": True, "message": "Item Added to Cart"})
     return redirect(url_for("checkout"))
 
 # ABOUT US PAGE
