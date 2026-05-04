@@ -117,7 +117,6 @@ body{
     flex-direction: column; /* Stacks the socials, links, and text */
     align-items: center; /* Centers everything horizontally */
     gap: 20px; /* Space between the three rows */
-    margin-top: 50px;
 
 }
 
