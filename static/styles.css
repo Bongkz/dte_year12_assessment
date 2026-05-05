@@ -612,6 +612,26 @@ body{
     cursor: pointer;
 }
 
+.checkout-button:hover {
+    background: #218838;
+}
+
+.order-more-button {
+    background: red;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    display: inline-block;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.order-more-button:hover {
+    background: #c41c1c;
+}
+
 @media (max-width: 768px) {
     .checkout-main {
         flex-direction: column;
