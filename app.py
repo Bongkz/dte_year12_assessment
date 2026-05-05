@@ -69,5 +69,15 @@ def remove_item(orderid):
 
     return redirect(url_for("checkout"))
 
+@app.route("/clear_cart", methods=["POST"])
+def clear_cart():
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("DELETE FROM orders")
+    conn.commit()
+
+    return jsonify({"success": True, "message": "Cart cleared"})
+
 if __name__ == "__main__":
     app.run(debug=True)

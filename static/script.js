@@ -46,19 +46,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.close');
 
     if (checkoutButton && modal) {
-        checkoutButton.addEventListener('click', () => {
-            modal.style.display = 'block';
+        checkoutButton.addEventListener('click', async () => {
+            try {
+                const response = await fetch('/clear_cart', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                const data = await response.json();
+                if (response.ok && data.success) {
+                    modal.style.display = 'block';
+                } else {
+                    alert('Failed to complete order');
+                }
+            } catch (error) {
+                alert('Error completing order');
+            }
         });
 
         if (closeBtn) {
             closeBtn.addEventListener('click', () => {
                 modal.style.display = 'none';
+                // Optionally redirect to home or refresh
+                window.location.href = '/';
             });
         }
 
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 modal.style.display = 'none';
+                // Optionally redirect to home or refresh
+                window.location.href = '/';
             }
         });
     }
