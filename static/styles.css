@@ -525,6 +525,105 @@ body{
 
 /****** Styling for checkout page ******/
 
+.checkout-page {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-main {
+    display: flex;
+    gap: 20px;
+    padding: 40px;
+    flex: 1;
+}
+
+.checkout-items,
+.checkout-summary {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 300px;
+}
+
+.checkout-header,
+.checkout-summary-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkout-header h2,
+.checkout-summary-header h2 {
+    margin: 0;
+}
+
+.checkout-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+.checkout-item-details h4 {
+    margin: 0;
+}
+
+.checkout-item-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.checkout-item-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.remove-item-form {
+    margin: 0;
+}
+
+.remove-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.checkout-summary-actions {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.checkout-button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .checkout-main {
+        flex-direction: column;
+        padding: 24px;
+    }
+
+    .checkout-items,
+    .checkout-summary {
+        min-height: auto;
+    }
+}
+
 
 
 /****** Styling for About Us page ******/
