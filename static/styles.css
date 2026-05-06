@@ -22,7 +22,7 @@ img, video, iframe {
 
 /* Adds gap from left and right and adds padding at the top so the nav bar doesn't cover*/
 body{
-    padding-top: 120px;
+    padding-top: 100px;
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -116,6 +116,7 @@ body{
 .main-footer {
     background-color: black;
     padding: 40px 0;
+    margin-top: 50px;
     /* removes padding from left and right */
     margin-right: -40px;
     margin-left: -40px;
@@ -542,10 +543,13 @@ body{
 .checkout-summary {
     flex: 1;
     background: #fff;
-    border: 1px solid #ddd;
     border-radius: 12px;
     padding: 20px;
     min-height: 300px;
+}
+
+.checkout-items {
+    border: 1px solid #ddd;
 }
 
 .checkout-header,
@@ -597,9 +601,11 @@ body{
     cursor: pointer;
 }
 
-.checkout-summary-actions {
-    text-align: center;
-    margin-top: 40px;
+.checkout-summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .checkout-button {
