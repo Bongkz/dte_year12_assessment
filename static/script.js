@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Modal functionality for checkout
+    // Toast notification for added to cart
     const modal = document.getElementById('order-modal');
     const checkoutButton = document.querySelector('.checkout-button');
     const closeBtn = document.querySelector('.close');

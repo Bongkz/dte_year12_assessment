@@ -5,14 +5,14 @@ from order import add_order
 app = Flask(__name__)
 app.teardown_appcontext(close_db)
 
-# HOME PAGE
+# Shows home page when user goes to "/"
 @app.route("/")
-def home():
+def home_page():
     return render_template("index.html")
 
-# MENU PAGE
+# Shows menu page when user goes to "/menu"
 @app.route("/menu")
-def menu():
+def menu_page():
     conn = get_db()
     cursor = conn.cursor()
 
@@ -36,14 +36,14 @@ def add_to_cart():
         return jsonify({"success": True, "message": "Item Added to Cart"})
     return redirect(url_for("checkout"))
 
-# ABOUT US PAGE
+# Shows about us page when user goes to "/aboutus"
 @app.route("/aboutus")
-def aboutus():
+def aboutus_page():
     return render_template("aboutus.html")
 
-# CHECKOUT PAGE
+# Shows checkout page when user goes to "/checkout"
 @app.route("/checkout")
-def checkout():
+def checkout_page():
     conn = get_db()
     cursor = conn.cursor()
 
