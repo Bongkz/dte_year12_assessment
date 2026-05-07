@@ -48,10 +48,13 @@ def checkout_page():
     cursor = conn.cursor()
 
     cursor.execute("""
-        SELECT orders.orderid, menu.name, menu.price, orders.quantity, orders.total
+        SELECT menu.menuid, menu.name, menu.price,
+            SUM(orders.quantity) AS quantity,
+            SUM(orders.total) AS total
         FROM orders
         JOIN menu ON orders.menuid = menu.menuid
-        ORDER BY orders.order_time DESC
+        GROUP BY menu.menuid
+        ORDER BY MAX(orders.order_time) DESC
     """)
     cart_items = cursor.fetchall()
 
@@ -59,12 +62,12 @@ def checkout_page():
 
     return render_template("checkout.html", cart_items=cart_items, total=total)
 
-@app.route("/remove_item/<int:orderid>", methods=["POST"])
-def remove_item(orderid):
+@app.route("/remove_item/<int:menuid>", methods=["POST"])
+def remove_item(menuid):
     conn = get_db()
     cursor = conn.cursor()
 
-    cursor.execute("DELETE FROM orders WHERE orderid = ?", (orderid,))
+    cursor.execute("DELETE FROM orders WHERE menuid = ?", (menuid,))
     conn.commit()
 
     return redirect(url_for("checkout_page"))
