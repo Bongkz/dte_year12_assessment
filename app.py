@@ -67,7 +67,7 @@ def remove_item(orderid):
     cursor.execute("DELETE FROM orders WHERE orderid = ?", (orderid,))
     conn.commit()
 
-    return redirect(url_for("checkout"))
+    return redirect(url_for("checkout_page"))
 
 @app.route("/clear_cart", methods=["POST"])
 def clear_cart():
