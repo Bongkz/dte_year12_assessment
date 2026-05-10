@@ -67,9 +67,29 @@ def remove_item(menuid):
     conn = get_db()
     cursor = conn.cursor()
 
-    cursor.execute("DELETE FROM orders WHERE menuid = ?", (menuid,))
-    conn.commit()
+    cursor.execute("SELECT orderid, quantity FROM orders WHERE menuid = ?", (menuid,))
+    order_row = cursor.fetchone()
 
+    if order_row is None:
+        return redirect(url_for("checkout_page"))
+
+    orderid, quantity = order_row
+    if quantity > 1:
+        cursor.execute(
+            "SELECT price FROM menu WHERE menuid = ?",
+            (menuid,),
+        )
+        price_row = cursor.fetchone()
+        price = price_row[0] if price_row else 0
+        new_quantity = quantity - 1
+        cursor.execute(
+            "UPDATE orders SET quantity = ?, total = ? WHERE orderid = ?",
+            (new_quantity, price * new_quantity, orderid),
+        )
+    else:
+        cursor.execute("DELETE FROM orders WHERE orderid = ?", (orderid,))
+
+    conn.commit()
     return redirect(url_for("checkout_page"))
 
 @app.route("/clear_cart", methods=["POST"])
